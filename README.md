@@ -39,8 +39,8 @@ sqlalchemy_and_alembic_boilerplate/
 
 Ensure you have the following installed before proceeding:
 
-- **Python 3.12.6 or greater**
-- **pip 24.2 or greater**
+- **Python 3.13.1 or greater**
+- **pip 25 or greater**
 
 ## Setup Instructions
 
