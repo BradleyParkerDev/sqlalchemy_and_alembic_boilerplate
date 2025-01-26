@@ -43,14 +43,20 @@ Ensure you have the following installed before proceeding:
 
 ## Setup Instructions
 
-### 1. Clone the Repository and Setup Environment
+### 1. Clone the Repository, Navigate into the Directory, and Setup Environment
 
 Clone the repository and navigate into the directory:
 
 ```bash
 git clone https://github.com/BradleyParkerDev/sqlalchemy_and_alembic_boilerplate.git
 cd sqlalchemy_and_alembic_boilerplate
+```
+
+```bash
 python -m venv venv
+```
+
+```bash
 source venv/bin/activate   # On Windows use `venv\Scripts\activate`
 ```
 
