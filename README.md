@@ -22,8 +22,9 @@ sqlalchemy_and_alembic_boilerplate/
 │   │   │-- db.py
 │   │-- __init__.py
 │-- .gitignore
-│-- README.md
 │-- alembic.ini
+│-- example.env
+│-- README.md
 └── requirements.txt
 ```
 
