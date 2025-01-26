@@ -67,6 +67,7 @@ source ./venv/bin/activate   # On Windows use `venv\Scripts\activate`
 ```
 
 <br>
+
 ### 2. Install Dependencies
 
 Ensure you have Python installed, then install the required dependencies:
@@ -76,6 +77,7 @@ pip install -r requirements.txt
 ```
 
 <br>
+
 ### 3. Configure Database
 
 Create a `.env` file:
