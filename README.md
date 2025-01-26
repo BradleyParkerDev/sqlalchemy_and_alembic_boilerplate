@@ -66,8 +66,6 @@ Activate the virtual environment:
 source ./venv/bin/activate   # On Windows use `venv\Scripts\activate`
 ```
 
-<br>
-
 ### 2. Install Dependencies
 
 Ensure you have Python installed, then install the required dependencies:
