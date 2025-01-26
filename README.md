@@ -160,12 +160,6 @@ class UserSession(Base):
 | `alembic upgrade head`        | Apply all pending migrations               |
 | `alembic downgrade -1`        | Revert the last migration                  |
 
-## Contributing
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Open a pull request.
 
 ## License
 
