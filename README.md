@@ -148,8 +148,6 @@ class UserSession(Base):
 ```
 
 ## Database Object
-
-### For `CRUD` Operations
 Located in `app/database/db.py`:
 
 ```python
