@@ -89,7 +89,7 @@ DATABASE_URL=postgresql://user:password@localhost:5432/your_database
 
 ### 4. Run Database Migrations
 
-Initialize and upgrade your database schema using Alembic:
+Initialize and upgrade your database schema in the `CLI` using Alembic:
 
 ```bash
 alembic upgrade head
