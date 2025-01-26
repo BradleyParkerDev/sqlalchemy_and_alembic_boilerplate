@@ -107,7 +107,6 @@ To add new tables or modify existing ones, run:
 alembic revision --autogenerate -m "Your migration message"
 alembic upgrade head
 ```
-<br>
 
 ## Database Models
 
@@ -156,7 +155,6 @@ class UserSession(Base):
     def get_expiration_time():
         return datetime.now(timezone.utc) + timedelta(days=7)
 ```
-<br>
 
 ## Alembic Commands Reference
 
@@ -166,8 +164,6 @@ class UserSession(Base):
 | `alembic revision --autogenerate -m "message"` | Generate a new migration based on changes |
 | `alembic upgrade head`        | Apply all pending migrations               |
 | `alembic downgrade -1`        | Revert the last migration                  |
-
-<br>
 
 ## License
 
