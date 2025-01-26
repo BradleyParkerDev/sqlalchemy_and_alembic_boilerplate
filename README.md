@@ -17,10 +17,10 @@ sqlalchemy_and_alembic_boilerplate/
 │   │   │   │-- __init__.py
 │   │   │   │-- model_base_class.py
 │   │   │   │-- user_sessions.py
-│   │   │   │-- users.py
+│   │   │   └── users.py
 │   │   │-- __init__.py
-│   │   │-- db.py
-│   │-- __init__.py
+│   │   └── db.py
+│   └── __init__.py
 │-- .gitignore
 │-- alembic.ini
 │-- example.env
@@ -52,7 +52,7 @@ Clone the repository:
 git clone https://github.com/BradleyParkerDev/sqlalchemy_and_alembic_boilerplate.git
 ```
 
-Navigate into the directory:
+Navigate into the root directory:
 ```bash
 cd sqlalchemy_and_alembic_boilerplate
 ```
@@ -157,9 +157,7 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from .models.model_base_class import Base
-from .models.user_sessions import UserSession
-from .models.users import User
+from .models import Base, UserSession, User
 
 # Load environment variables
 load_dotenv()
