@@ -167,6 +167,7 @@ class UserSession(Base):
 | `alembic upgrade head`        | Apply all pending migrations               |
 | `alembic downgrade -1`        | Revert the last migration                  |
 
+<br>
 
 ## License
 
