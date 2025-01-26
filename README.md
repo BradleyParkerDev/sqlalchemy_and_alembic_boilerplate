@@ -151,7 +151,6 @@ class UserSession(Base):
 
 | Command                      | Description                                |
 |------------------------------|--------------------------------------------|
-| `alembic init alembic`        | Initialize Alembic directory               |
 | `alembic revision --autogenerate -m "message"` | Generate a new migration based on changes |
 | `alembic upgrade head`        | Apply all pending migrations               |
 | `alembic downgrade -1`        | Revert the last migration                  |
