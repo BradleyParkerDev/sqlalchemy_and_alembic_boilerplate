@@ -43,7 +43,7 @@ Ensure you have the following installed before proceeding:
 
 ## Setup Instructions
 
-### 1. Clone the Repository and Setup Environment
+### 1. Clone the Repository and Setup the Environment
 
 Clone the repository:
 
