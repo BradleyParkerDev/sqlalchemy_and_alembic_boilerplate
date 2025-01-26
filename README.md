@@ -92,6 +92,7 @@ DATABASE_URL=postgresql://user:password@localhost:5432/your_database
 ```
 
 <br>
+
 ### 4. Run Database Migrations
 
 Initialize and upgrade your database schema using Alembic:
@@ -101,11 +102,13 @@ alembic upgrade head
 ```
 
 <br>
+
 ### 5. Running the Application
 
 You can now integrate this boilerplate into your FastAPI or Flask application and start making CRUD operations.
 
 <br>
+
 ### 6. Creating Migrations
 
 To add new tables or modify existing ones, run:
