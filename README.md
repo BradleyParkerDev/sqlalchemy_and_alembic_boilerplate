@@ -76,7 +76,7 @@ pip install -r requirements.txt
 
 ### 3. Configure Database
 
-Update the `DATABASE_URL` in your environment or directly modify the `db.py` file to reflect your PostgreSQL credentials:
+Update the `DATABASE_URL` in your `.env` file:
 
 ```python
 DATABASE_URL = "postgresql://user:password@localhost:5432/your_database"
