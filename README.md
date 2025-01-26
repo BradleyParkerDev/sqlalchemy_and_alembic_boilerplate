@@ -84,7 +84,7 @@ touch .env
 
 Then add your `DATABASE_URL` to it:
 ```bash
-DATABASE_URL =postgresql://user:password@localhost:5432/your_database
+DATABASE_URL=postgresql://user:password@localhost:5432/your_database
 ```
 
 ### 4. Run Database Migrations
