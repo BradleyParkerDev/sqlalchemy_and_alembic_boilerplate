@@ -76,12 +76,13 @@ pip install -r requirements.txt
 
 ### 3. Configure Database
 
-Create a `.env` file and then add your `DATABASE_URL`:
+Create a `.env` file:
 
 ```bash
 touch .env
 ```
 
+Then add your `DATABASE_URL` to it:
 ```bash
 DATABASE_URL =postgresql://user:password@localhost:5432/your_database
 ```
