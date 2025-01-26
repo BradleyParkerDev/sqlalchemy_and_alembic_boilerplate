@@ -24,7 +24,7 @@ sqlalchemy_and_alembic_boilerplate/
 │-- .gitignore
 │-- README.md
 │-- alembic.ini
-│-- requirements.txt
+└── requirements.txt
 ```
 
 ## Features
@@ -63,7 +63,7 @@ python -m venv venv
 
 Activate the virtual environment:
 ```bash
-source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+source ./venv/bin/activate   # On Windows use `venv\Scripts\activate`
 ```
 
 ### 2. Install Dependencies
