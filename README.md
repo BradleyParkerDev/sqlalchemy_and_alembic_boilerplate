@@ -76,10 +76,14 @@ pip install -r requirements.txt
 
 ### 3. Configure Database
 
-Update the `DATABASE_URL` in your `.env` file:
+Create a `.env` file and then add your `DATABASE_URL`:
 
-```python
-DATABASE_URL = "postgresql://user:password@localhost:5432/your_database"
+```bash
+touch .env
+```
+
+```bash
+DATABASE_URL =postgresql://user:password@localhost:5432/your_database
 ```
 
 ### 4. Run Database Migrations
