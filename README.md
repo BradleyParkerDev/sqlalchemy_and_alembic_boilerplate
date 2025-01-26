@@ -34,9 +34,27 @@ sqlalchemy_and_alembic_boilerplate/
 - **Alembic Migrations:** Database versioning with migration scripts.
 - **User and Session Models:** Predefined user and session tables for authentication systems.
 
+## Prerequisites
+
+Ensure you have the following installed before proceeding:
+
+- **Python 3.12.6 or greater**
+- **pip 24.2 or greater**
+
 ## Setup Instructions
 
-### 1. Install Dependencies
+### 1. Clone the Repository and Setup Environment
+
+Clone the repository and navigate into the directory:
+
+```bash
+git clone https://github.com/BradleyParkerDev/sqlalchemy_and_alembic_boilerplate.git
+cd sqlalchemy_and_alembic_boilerplate
+python -m venv venv
+source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+```
+
+### 2. Install Dependencies
 
 Ensure you have Python installed, then install the required dependencies:
 
@@ -44,7 +62,7 @@ Ensure you have Python installed, then install the required dependencies:
 pip install -r requirements.txt
 ```
 
-### 2. Configure Database
+### 3. Configure Database
 
 Update the `DATABASE_URL` in your environment or directly modify the `db.py` file to reflect your PostgreSQL credentials:
 
@@ -52,7 +70,7 @@ Update the `DATABASE_URL` in your environment or directly modify the `db.py` fil
 DATABASE_URL = "postgresql://user:password@localhost:5432/your_database"
 ```
 
-### 3. Run Database Migrations
+### 4. Run Database Migrations
 
 Initialize and upgrade your database schema using Alembic:
 
@@ -60,11 +78,11 @@ Initialize and upgrade your database schema using Alembic:
 alembic upgrade head
 ```
 
-### 4. Running the Application
+### 5. Running the Application
 
 You can now integrate this boilerplate into your FastAPI or Flask application and start making CRUD operations.
 
-### 5. Creating Migrations
+### 6. Creating Migrations
 
 To add new tables or modify existing ones, run:
 
