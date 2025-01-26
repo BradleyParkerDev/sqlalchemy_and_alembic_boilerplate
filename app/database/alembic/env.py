@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 # model imports - models need to be imported for migrations to work
 from app.database.models.model_base_class import Base
 from app.database.models.users import User
+from app.database.models.user_sessions import UserSession
 
 # imports already here
 from logging.config import fileConfig
