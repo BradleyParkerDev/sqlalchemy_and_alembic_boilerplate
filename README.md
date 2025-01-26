@@ -76,8 +76,6 @@ Ensure you have Python installed, then install the required dependencies:
 pip install -r requirements.txt
 ```
 
-<br>
-
 ### 3. Configure Database
 
 Create a `.env` file:
@@ -91,8 +89,6 @@ Then add your `DATABASE_URL` to it:
 DATABASE_URL=postgresql://user:password@localhost:5432/your_database
 ```
 
-<br>
-
 ### 4. Run Database Migrations
 
 Initialize and upgrade your database schema using Alembic:
@@ -101,13 +97,9 @@ Initialize and upgrade your database schema using Alembic:
 alembic upgrade head
 ```
 
-<br>
-
 ### 5. Running the Application
 
 You can now integrate this boilerplate into your FastAPI or Flask application and start making CRUD operations.
-
-<br>
 
 ### 6. Creating Migrations
 
@@ -117,6 +109,7 @@ To add new tables or modify existing ones, run:
 alembic revision --autogenerate -m "Your migration message"
 alembic upgrade head
 ```
+<br>
 
 ## Database Models
 
@@ -165,6 +158,7 @@ class UserSession(Base):
     def get_expiration_time():
         return datetime.now(timezone.utc) + timedelta(days=7)
 ```
+<br>
 
 ## Alembic Commands Reference
 
