@@ -156,8 +156,7 @@ import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-from .models import Base, UserSession, User
+from app.database.models import Base, UserSession, User
 
 # Load environment variables
 load_dotenv()
