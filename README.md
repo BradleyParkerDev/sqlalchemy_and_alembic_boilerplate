@@ -7,25 +7,26 @@ This repository provides a boilerplate setup for integrating **SQLAlchemy** and 
 
 ```
 sqlalchemy_and_alembic_boilerplate/
-│-- app/
-│   │-- __pycache__/
-│   │-- database/
-│   │   │-- __pycache__/
-│   │   │-- alembic/
-│   │   │-- models/
-│   │   │   │-- __pycache__/
-│   │   │   │-- __init__.py
-│   │   │   │-- model_base_class.py
-│   │   │   │-- user_sessions.py
-│   │   │   └── users.py
-│   │   │-- __init__.py
-│   │   └── db.py
-│   └── __init__.py
-│-- .gitignore
-│-- alembic.ini
-│-- example.env
-│-- README.md
-└── requirements.txt
+├── app/                                 # Main application folder
+│   ├── __pycache__/                     # Compiled Python bytecode files (ignored by git)
+│   ├── database/                        # Database-related files and folders
+│   │   ├── __pycache__/                 # Compiled bytecode for database files
+│   │   ├── alembic/                     # Alembic migration folder (auto-generated)
+│   │   ├── models/                      # Database models live here
+│   │   │   ├── __pycache__/             # Compiled bytecode for models
+│   │   │   ├── __init__.py              # Makes 'models' folder a Python package
+│   │   │   ├── model_base_class.py      # Base SQLAlchemy model class
+│   │   │   ├── user_sessions.py         # User sessions table definition
+│   │   │   └── users.py                 # Users table definition
+│   │   ├── __init__.py                  # Makes 'database' a package
+│   │   └── db.py                        # Database connection setup (engine, session, etc.)
+│   ├── __init__.py                      # Makes 'app' a Python package
+├── .gitignore                           # Files and folders to ignore in git
+├── alembic.ini                          # Alembic configuration file
+├── example.env                          # Example environment variable file
+├── README.md                            # Project documentation
+└── requirements.txt                     # Python dependencies list
+
 ```
 
 ## Features
