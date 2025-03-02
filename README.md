@@ -8,7 +8,7 @@ This repository provides a boilerplate setup for integrating **SQLAlchemy** and 
 ```
 sqlalchemy_and_alembic_boilerplate/
 ├── app/                                 # Main application folder
-│   ├── __pycache__/                     # Compiled Python bytecode files (ignored by git)
+│   ├── __pycache__/                     # Compiled Python bytecode files 
 │   ├── database/                        # Database-related files and folders
 │   │   ├── __pycache__/                 # Compiled bytecode for database files
 │   │   ├── alembic/                     # Alembic migration folder (auto-generated)
