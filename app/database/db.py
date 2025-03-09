@@ -1,8 +1,13 @@
 import os
+import logging
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from app.database.models import Base, UserSession, User
+
+
+# Disable SQLAlchemy INFO logs but keep warnings/errors
+logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
 # Load environment variables
 load_dotenv()
@@ -16,16 +21,16 @@ class DB:
         self.session = None
 
     def initialize(self):
-        self.engine = create_engine(self.database_url,echo=True)
+        self.engine = create_engine(self.database_url,echo=False)
         self.session_local = sessionmaker(bind=self.engine)
         self.session = self.session_local()
 
     def close(self):
         if self.session:
-            self.session.close
+            self.session.close()
 
 # For db creation without alembic
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DATABASE_URL, echo=False)
 def init_db():
     print("Connecting to database...")
     Base.metadata.create_all(bind=engine)
