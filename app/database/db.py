@@ -24,7 +24,7 @@ class DB:
         self.session = None
 
     def initialize(self):
-        self.engine = create_engine(self.database_url,echo=False)
+        self.engine = create_engine(self.database_url,echo=False) # echo=False suppresses SQL logs
         self.session_local = sessionmaker(bind=self.engine)
         self.session = self.session_local()
 
@@ -33,7 +33,7 @@ class DB:
             self.session.close()
 
 # For db creation without alembic
-engine = create_engine(DATABASE_URL, echo=False)
+engine = create_engine(DATABASE_URL, echo=False) # echo=False suppresses SQL logs
 def init_db():
     print("Connecting to database...")
     Base.metadata.create_all(bind=engine)
