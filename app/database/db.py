@@ -7,7 +7,10 @@ from app.database.models import Base, UserSession, User
 
 
 # Disable SQLAlchemy INFO logs but keep warnings/errors
-logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
+logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)  # Suppresses SQL execution logs (e.g., SELECT, INSERT)
+logging.getLogger("sqlalchemy.orm").setLevel(logging.WARNING)  # Hides ORM-related logs (e.g., session commits, queries)
+logging.getLogger("sqlalchemy.pool").setLevel(logging.WARNING)  # Prevents logs about database connections (pooling)
+logging.getLogger("sqlalchemy").setLevel(logging.WARNING)  # Disables all SQLAlchemy logs except warnings/errors
 
 # Load environment variables
 load_dotenv()
