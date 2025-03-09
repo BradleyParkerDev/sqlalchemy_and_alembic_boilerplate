@@ -202,6 +202,12 @@ def init_db():
 | `alembic upgrade head`        | Apply all pending migrations               |
 | `alembic downgrade -1`        | Revert the last migration                  |
 
+## Note
+
+Ensure that your PostgreSQL database timezone is set to 'UTC' (Coordinated Universal Time) in your PostgreSQL configuration. This helps avoid timezone-related issues and ensures consistency across different environments.
+
+If you are using Neon, note that it uses 'GMT' (Greenwich Mean Time) by default, which is functionally equivalent to UTC+0. No additional configuration is needed for Neon, but you should still verify your database settings if working across multiple environments.
+
 ## License
 
 This project is intended for personal and educational purposes only.
