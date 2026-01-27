@@ -1,5 +1,4 @@
-SQLAlchemy & Alembic Boilerplate
-=================================
+# SQLAlchemy & Alembic Boilerplate
 
 This repository provides a boilerplate setup for integrating **SQLAlchemy** and **Alembic** in a FastAPI or Python-based backend project. It includes a pre-configured database schema with `User` and `UserSession` tables using PostgreSQL.
 
@@ -8,7 +7,7 @@ This repository provides a boilerplate setup for integrating **SQLAlchemy** and 
 ```
 sqlalchemy_and_alembic_boilerplate/
 ├── app/                                 # Main application folder
-│   ├── __pycache__/                     # Compiled Python bytecode files 
+│   ├── __pycache__/                     # Compiled Python bytecode files
 │   ├── database/                        # Database-related files and folders
 │   │   ├── __pycache__/                 # Compiled bytecode for database files
 │   │   ├── alembic/                     # Alembic migration folder (auto-generated)
@@ -45,7 +44,7 @@ Ensure you have the following installed before proceeding:
 
 ## Setup Instructions
 
-### 1. Clone the Repository and Setup the Environment
+### 1. Clone the Repository
 
 Clone the repository:
 
@@ -54,29 +53,46 @@ git clone https://github.com/BradleyParkerDev/sqlalchemy_and_alembic_boilerplate
 ```
 
 Navigate into the root directory:
+
 ```bash
 cd sqlalchemy_and_alembic_boilerplate
 ```
 
+### 2. Create a Virtual Environment
+
 Create a virtual environment:
+
 ```bash
 python -m venv venv
 ```
 
+or use make:
+
+```bash
+make env
+```
+
 Activate the virtual environment:
+
 ```bash
 source ./venv/bin/activate   # On Windows use `venv\Scripts\activate`
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 
 Ensure you have Python installed, then install the required dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
-### 3. Configure Database
+or use make:
+
+```bash
+make install
+```
+
+### 4. Configure Database
 
 Create a `.env` file:
 
@@ -85,11 +101,12 @@ touch .env
 ```
 
 Then add your `DATABASE_URL` to it:
+
 ```bash
 DATABASE_URL=postgresql://user:password@localhost:5432/your_database
 ```
 
-### 4. Run your First Migration
+### 5. Run your First Migration
 
 To add new tables or modify existing ones, run:
 
@@ -97,13 +114,26 @@ To add new tables or modify existing ones, run:
 alembic revision --autogenerate -m "Your migration message"
 ```
 
+or use make:
+
+```bash
+make db-revision MSG="Your migration message"
+```
+
 ```bash
 alembic upgrade head
+```
+
+or use make:
+
+```bash
+make db-up
 ```
 
 ## Database Models
 
 ### `User` Model
+
 Located in `app/database/models/users.py`:
 
 ```python
@@ -111,7 +141,7 @@ import uuid
 from .model_base_class import Base
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy.dialects.postgresql import UUID as pgUUID
-from datetime import datetime, timezone 
+from datetime import datetime, timezone
 
 class User(Base):
     __tablename__ = "users"
@@ -127,6 +157,7 @@ class User(Base):
 ```
 
 ### `UserSession` Model
+
 Located in `app/database/models/user_sessions.py`:
 
 ```python
@@ -134,7 +165,7 @@ import uuid
 from .model_base_class import Base
 from sqlalchemy import Column, String, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID as pgUUID
-from datetime import datetime, timezone, timedelta 
+from datetime import datetime, timezone, timedelta
 
 class UserSession(Base):
     __tablename__ = "user_sessions"
@@ -150,6 +181,7 @@ class UserSession(Base):
 ```
 
 ## Database Object
+
 Located in `app/database/db.py`:
 
 ```python
@@ -194,15 +226,32 @@ def init_db():
     Base.metadata.create_all(bind=engine)
     print("App successfully connected to database!!!")
 ```
+
+## Scripts
+
+### Make Commands
+
+```bash
+make env            # Create a virtual environment
+make clean          # Remove build artifacts and caches
+make install        # Python dev deps
+make freeze         # Export Python deps to requirements.txt
+make db-revision    # Create alembic migration (use MSG="message")
+make db-up          # Apply all pending migrations
+make db-down        # Revert the last migration
+```
+
 ## Alembic Commands Reference
 
-| Command                      | Description                                |
-|------------------------------|--------------------------------------------|
+| Command                                        | Description                               |
+| ---------------------------------------------- | ----------------------------------------- |
 | `alembic revision --autogenerate -m "message"` | Generate a new migration based on changes |
-| `alembic upgrade head`        | Apply all pending migrations               |
-| `alembic downgrade -1`        | Revert the last migration                  |
+| `alembic upgrade head`                         | Apply all pending migrations              |
+| `alembic downgrade -1`                         | Revert the last migration                 |
 
-## Note
+**Note:** For guidance on editing migration files, see the Alembic documentation.
+
+## Development Notes
 
 Ensure that your PostgreSQL database timezone is set to 'UTC' (Coordinated Universal Time) in your PostgreSQL configuration. This helps avoid timezone-related issues and ensures consistency across different environments.
 
@@ -211,4 +260,3 @@ If you are using Neon, note that it uses 'GMT' (Greenwich Mean Time) by default,
 ## License
 
 This project is intended for personal and educational purposes only.
-

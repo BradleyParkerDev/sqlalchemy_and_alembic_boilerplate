@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+app/__init__.py
+sqlalchemy_and_alembic_boilerplate.egg-info/PKG-INFO
+sqlalchemy_and_alembic_boilerplate.egg-info/SOURCES.txt
+sqlalchemy_and_alembic_boilerplate.egg-info/dependency_links.txt
+sqlalchemy_and_alembic_boilerplate.egg-info/requires.txt
+sqlalchemy_and_alembic_boilerplate.egg-info/top_level.txt

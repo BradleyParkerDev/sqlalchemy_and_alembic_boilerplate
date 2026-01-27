@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlalchemy_and_alembic_boilerplate"
+version = "0.1.0"
+description = "SQLAlchemy + Alembic database boilerplate"
+requires-python = ">=3.11"
+
+dependencies = [
+  "sqlalchemy",
+  "alembic",
+  "psycopg2-binary",
+  "python-dotenv",
+]
+
+[tool.setuptools]
+packages = ["app"]
