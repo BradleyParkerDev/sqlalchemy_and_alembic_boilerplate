@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: sqlalchemy_and_alembic_boilerplate
-Version: 0.1.0
-Summary: SQLAlchemy + Alembic database boilerplate
-Requires-Python: >=3.11
-Requires-Dist: sqlalchemy
-Requires-Dist: alembic
-Requires-Dist: psycopg2-binary
-Requires-Dist: python-dotenv

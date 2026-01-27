@@ -39,8 +39,8 @@ sqlalchemy_and_alembic_boilerplate/
 
 Ensure you have the following installed before proceeding:
 
-- **Python 3.13.1 or greater**
-- **pip 25 or greater**
+- **Python**: Version `3.13.1` or higher
+- **pip**: Version `25` or higher
 
 ## Setup Instructions
 
@@ -106,7 +106,7 @@ Then add your `DATABASE_URL` to it:
 DATABASE_URL=postgresql://user:password@localhost:5432/your_database
 ```
 
-### 5. Run your First Migration
+### 5. Generate a Migration File
 
 To add new tables or modify existing ones, run:
 
@@ -119,6 +119,8 @@ or use make:
 ```bash
 make db-revision MSG="Your migration message"
 ```
+
+### 6. Apply the Migration to the Database
 
 ```bash
 alembic upgrade head
