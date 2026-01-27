@@ -19,10 +19,13 @@ sqlalchemy_and_alembic_boilerplate/
 │   │   │   └── users.py                 # Users table definition
 │   │   ├── __init__.py                  # Makes 'database' a package
 │   │   └── db.py                        # Database connection setup (engine, session, etc.)
-│   ├── __init__.py                      # Makes 'app' a Python package
+│   └── __init__.py                      # Makes 'app' a Python package
+├── venv/                                # Python virtual environment (local)
 ├── .gitignore                           # Files and folders to ignore in git
 ├── alembic.ini                          # Alembic configuration file
 ├── example.env                          # Example environment variable file
+├── Makefile                             # Make commands
+├── pyproject.toml                       # Python project metadata/dependencies
 ├── README.md                            # Project documentation
 └── requirements.txt                     # Python dependencies list
 
