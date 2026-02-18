@@ -3,7 +3,7 @@ import logging
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.database.models import Base, UserSession, User
+from app.database.models import Base, Session, User
 
 
 # Disable SQLAlchemy INFO logs but keep warnings/errors
