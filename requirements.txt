@@ -5,5 +5,5 @@ MarkupSafe==3.0.3
 psycopg2-binary==2.9.11
 python-dotenv==1.2.1
 SQLAlchemy==2.0.46
--e git+https://github.com/BradleyParkerDev/sqlalchemy_and_alembic_boilerplate.git@950b83d7697c8a1113bccadd91f2c58fd4935cb4#egg=sqlalchemy_and_alembic_boilerplate
+-e git+https://github.com/BradleyParkerDev/sqlalchemy_and_alembic_boilerplate.git@45da70e2ab2e5cb8403fdc797be2bfcab82d2004#egg=sqlalchemy_and_alembic_boilerplate
 typing_extensions==4.15.0

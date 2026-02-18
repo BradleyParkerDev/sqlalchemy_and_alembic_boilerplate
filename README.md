@@ -15,7 +15,7 @@ sqlalchemy_and_alembic_boilerplate/
 │   │   │   ├── __pycache__/             # Compiled bytecode for models
 │   │   │   ├── __init__.py              # Makes 'models' folder a Python package
 │   │   │   ├── model_base_class.py      # Base SQLAlchemy model class
-│   │   │   ├── user_sessions.py         # User sessions table definition
+│   │   │   ├── sessions.py              # User sessions table definition
 │   │   │   └── users.py                 # Users table definition
 │   │   ├── __init__.py                  # Makes 'database' a package
 │   │   └── db.py                        # Database connection setup (engine, session, etc.)
@@ -152,7 +152,6 @@ class User(Base):
     __tablename__ = "users"
 
     user_id = Column(pgUUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_image = Column(String, nullable=False)
     user_name = Column(String, unique=True, nullable=False)
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
@@ -161,7 +160,7 @@ class User(Base):
     last_updated = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
 ```
 
-### `UserSession` Model
+### `Session` Model
 
 Located in `app/database/models/user_sessions.py`:
 
@@ -172,8 +171,8 @@ from sqlalchemy import Column, String, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID as pgUUID
 from datetime import datetime, timezone, timedelta
 
-class UserSession(Base):
-    __tablename__ = "user_sessions"
+class Session(Base):
+    __tablename__ = "sessions"
 
     session_id = Column(pgUUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     user_id = Column(pgUUID(as_uuid=True), ForeignKey('users.user_id',ondelete="CASCADE"), nullable=True)

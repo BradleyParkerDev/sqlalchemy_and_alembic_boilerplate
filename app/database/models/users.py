@@ -8,7 +8,6 @@ class User(Base):
     __tablename__ = "users"
 
     user_id = Column(pgUUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_image = Column(String, nullable=False)
     user_name = Column(String, unique=True, nullable=False)
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
